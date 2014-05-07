@@ -1,0 +1,36 @@
+... 
+handleScroll: function(left, top) {
+   this.setState({
+     scrollLeft: left
+   });
+   ...
+ }
+
+
+render: function() {
+    ...
+    var mask;
+    if (!this.isClose()) { // check state
+      mask = <div style={maskStyle} onTouchTap={this.toggle}/>;
+    }
+    ...
+    return (
+      <div>
+      <AnimatableContainer
+        className="offcanvas-side"
+        style={sideStyle}
+        translate={touchBehavior.side.translate(this.props.width, this.state.scrollLeft)}
+        opacity={touchBehavior.side.opacity(this.props.width, this.state.scrollLeft)} >
+          {this.props.sideContent}
+      </AnimatableContainer>
+      <AnimatableContainer
+        style={mainStyle}
+        translate={touchBehavior.main.translate(this.props.width, this.state.scrollLeft)}>
+        <TouchableArea scroller={this.scroller} touchable={!this.isClose()}>
+        {this.props.children}
+        {mask}
+        </TouchableArea>
+      </AnimatableContainer>
+      </div>
+    );
+}

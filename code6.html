@@ -1,0 +1,36 @@
+var RoutedLink = require('react-touch/lib/routing/RoutedLink');
+var OffCanvas  = require('../../cuvee_ui/offcanvas');
+var ButtonNav  = require('../../cuvee_ui/buttons/hamberg.js');
+var ScrollView = require('../../cuvee_ui/scrollview');
+...
+var navButton = (
+  <span className={classname}>
+  <ButtonNav onTouchTap={this.handleNavButtonTap} ref="bn_nav" />
+  </span>
+);
+
+var side = (
+  <div className="app-side-nav">
+  <ScrollView>
+  <ul>
+    <li><RoutedLink href="/demo1" onClick={this.handleNavItemTap}>Demo 1</RoutedLink></li>
+    <li><RoutedLink href="/demo2" onClick={this.handleNavItemTap}>Demo 2</RoutedLink></li>
+    <li><RoutedLink href="/demo3" onClick={this.handleNavItemTap}>Demo 3</RoutedLink></li>
+    <li><RoutedLink href="/demo4" onClick={this.handleNavItemTap}>Demo 4</RoutedLink></li>
+  </ul>
+  </ScrollView>
+  </div>
+);
+
+return (
+  <div className="app-root" onTouchMove={this.handleTouchMove}>
+    <OffCanvas width={document.documentElement.clientWidth * .8}
+               ref="sidenav"
+               sideContent={side}
+               onOpen={this.handleNavButtonToggle.bind(this, true)}
+               onClose={this.handleNavButtonToggle.bind(this, false)}>
+      {navButton}
+      {this.props.children}
+    </OffCanvas>
+  </div>
+);

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="format-detection" content="telephone=no"/>
+  <title>React x Components &middot; kejun</title>
+  <base target="_blank">
+  <link rel="apple-touch-icon-precomposed" href="">
+  <link rel="stylesheet" href="static/css/prism.css"  media="screen"/>
+  <link rel="stylesheet" href="static/css/slides.css" media="screen" />
+  <link rel="stylesheet" href="static/css/customiz.css" media="screen" />
+  <style media="print">
+   .no-support, iframe { display: none; }
+   .page { margin-bottom: 2em; }
+  </style>
+</head>
+<body>
+  <h1>React x Components &middot; kejun </h1>
+<label class="bn-toggle-gesture">
+<input type="checkbox" class="toggle-gesture">
+手势
+</label>
+<label class="bn-toggle-fullscreen">
+<input type="checkbox" class="toggle-fullscreen">
+全屏
+</label>
+
+<div class="page page-cover">
+<article style="background:#008CB3">
+<div class="page-cover-content">
+<div class="title">
+  React <em>X</em> Components
+</div>
+<div class="author"><a href="http://www.douban.com/people/listenpro/"><img src="http://img3.douban.com/icon/u1170308-32.jpg" width="24" alt=""></a>Kejun ( @kejunz )</div>
+</div>
+</article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>About React</h2>
+  <ul>
+    <li>React is a JavaScript library for building user interfaces. Open source by Facebook
+    <a href="http://facebook.github.io/react">facebook.github.io/react</a>
+    <li> 3 highlight spots: <em>Just the UI</em> / <em>Virtual DOM</em> / <em>Data Flow</em>
+    <li>"We strongly believe that components are the right way to separate concerns rather than 'templates' and 'display logic.'" from React Blog 
+    <li>Components + MVC is Perfect, But Components is enough
+  </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>Understanding React</h2>
+  <ul>
+    <li>A component-implementation library, Not MVC 
+    <li>Troubles with MVC
+    <svg width="100%" height="200" viewBox="0 0 640 190">
+    <def>
+    <g id="svg-figure-1">
+    <circle cx="151" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+      <animate attributeName="r" to="50" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+    </circle>
+    <circle cx="301" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+      <animate id="svg_figure1_anim1" attributeName="r" to="60" dur="1s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate id="svg_figure1_anim1" attributeName="r" to="80" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+      <animate attributeName="fill" from="#fff600" to="#f00" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+      <animate attributeName="fill-opacity" to=".6" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+    </circle>
+    <circle cx="451" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+      <animate attributeName="r" to="60" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+      <animate attributeName="fill-opacity" to=".5" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+    </circle>
+    <text x="140" y="110">M</text>
+    <text x="292" y="110">V</text>
+    <text x="440" y="110">C</text>
+    </g>
+    </def>
+    <use id="svg_figure1" xlink:href="#svg-figure-1"></use>
+    </svg>
+  </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>React Thinking</h2>
+  <ul>
+    <li>Part–whole theory
+    <li>DEMO: Feedback
+<pre>
+|-- app.js
+|-- com.mark.js
+|-- com.mask.js
+|-- com.step1.js
+|-- com.step2.js
+|-- com.step3.js
+`-- post.js
+</pre>
+  </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>React Touch</h2>
+  <ul>
+  <li>React component library for building inertial touch applications. created by  Pete Hunt.
+  see <a href="https://github.com/petehunt/react-touch-lib">github</a>
+  <li>A typical usecase base on React, DEMO: 
+  <a href="javascript:;" onclick="(function(p,n){var img=document.createElement('img');img.src='static/pics/demo1.gif';img.style.verticalAlign='top';p.insertBefore(img, n);p.removeChild(n);})(this.parentNode,this)">preview</a>
+  <li>React x ReactTouch x <a href="http://gulpjs.com/">Gulp</a> x <a href="http://webpack.github.io/">Webpack</a> x <a href="http://zynga.github.io/scroller/">ZyngaScroller</a>
+  </ul>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>Anatomy with SICA</h2>
+  <ol style="margin-left:2em;font-size:2em">
+    <li>Split
+    <li>Isolation
+    <li>Combintion
+    <li>Abstract
+  </ol>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+  <h2>Split</h2>
+<p>Re-think Single-Page-App (experience) and Multiple-Pages-App (maintainability)
+<p>Split: 'Pages' (layout & content) > modules > components > utils
+<div style="text-align:center;">
+<div class="col" style="margin-right:2em;">
+<h3>Source:</h3>
+<pre style="font-size:1em;">
+[react-touch-lib]  <----------- ui components lib
+[cuvee-ui]
+...
+├── app.js  <------------------ app entry point
+├── libs  <-------------------- external libs deps
+│   ├── animate.js
+│   ├── raf.js
+│   └── scroller.js
+├── mods  <-------------------- public mods
+│   ├── header.js
+│   ├── is_ios7.js
+│   └── is_phonegap.js
+└── pages  <-------------------* business logic split 
+    ├── error.js
+    ├── home.js
+    ├── images.js
+    ├── launch.js
+    ├── layout.js
+    └── main.js  <-------------* controller
+</pre>
+  </div>
+  <div class="col">
+<h3>After Building:</h3>
+<pre style="font-size:1em;">
+├── build
+│   └── js
+│       ├── app.js
+│       └── external.js
+├── index.html
+</pre>
+  </div>
+</div>
+  </article>
+</div>
+
+<div class="page">
+  <article>
+<div class="col">
+<h3>1. App entry: set main func & route</h3>
+<pre data-src="code2.html" data-type="language-javascript"></pre>
+</div>
+<div class="col">
+<h3>2. Set controller:</h3>
+<pre data-src="code1.html" data-type="language-javascript"></pre>
+</div>
+  </article>
+</div>
+
+<div class="page">
+<article>
+<h2>Isolation</h2>
+<ul>
+<li>(1)Encapsulate(functions, dependances, effects,...), (2)compatible and (3)replaceable. see (Example 1)
+<li>Interactive with 'state'. see (Example 2)
+</ul>
+<p>Example 1 - ScrollView: (use a external UI Components library)
+<pre data-src="code3.html" data-type="language-javascript"></pre>
+<p>Example 2 - Coordinating animations (declarative is so good)
+<pre data-src="code4.html" data-type="language-javascript"></pre>
+</article>
+</div>
+
+
+<div class="page">
+<article>
+<h2>Combintion</h2>
+<ul>
+<li> component + component + ... = a new component
+</ul>
+<p>Example 3 - Split page layout & page content (change layout is so easy)
+<pre data-src="code5.html" data-type="language-javascript"></pre>
+<p>Example 4 - Usage of OffCanvas with multiple components: 
+<pre data-src="code6.html" data-type="language-javascript"></pre>
+</article>
+</div>
+
+
+<div class="page">
+<article>
+<h2>Abstract</h2>
+<ul>
+<li>Abstract general UI components (ScrollView, ImageView, HambergButton, OffCanvas, ...)
+<li>Abstract mechanism (App framework, Route & Controller, ...)
+<li>Abstract interactive & effect (Scroller, AnimatableContainer, TouchableArea, ...)
+</ul>
+<p>Example 5 - build a ImageView so easy: 
+<pre data-src="code7.html" data-type="language-javascript"></pre>
+  </article>
+</div>
+
+
+<div class="page">
+  <article>
+<h2>Extra: SVG</h2>
+<p>SVG is a natual component.
+
+<div>
+<img src="static/pics/demo2.gif">
+</div>
+<p>Example 6 - Hamberg Button: 
+<pre data-src="code8.html" data-type="language-javascript"></pre>
+<p>Example 7 - Loading (see LauchScreen, ImageCard): 
+<pre data-src="code9.html" data-type="language-javascript"></pre>
+  </article>
+</div>
+
+
+
+<div class="page page-end">
+  <article>
+  <p>Thanks!
+  </article>
+</div>
+
+
+<div class="page page-center">
+  <article>
+  <p>Q & A
+  </article>
+</div>
+
+
+
+
+<div class="no-support">
+  Sorry! 暂不支持你的浏览器，请用Chrome打开...
+</div>
+<script src="static/js/prism.js"></script>
+<script src="static/js/zepto.js"></script>
+<script src="static/js/webcamswiper0.1.js"></script>
+<script src="static/js/slides.js"></script>
+</body>
+</html>

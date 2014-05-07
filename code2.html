@@ -1,0 +1,18 @@
+var React = require('react');
+var ReactTouch = require('react-touch');
+var MainPage = require('./pages/main.js');
+
+require('../cuvee_ui/css/reset.css');
+
+app = {
+  start: function(mountNode) {
+    ReactTouch.start(MainPage, mountNode, {
+      '/launch$':  'launch',
+      '/demo1$':   'demo1',
+      '/demo2$':   'demo2',
+      '/demo3$':   'demo3',
+      '/demo4$':   'demo4',
+      '/$':        'launch'
+    });
+  }
+};

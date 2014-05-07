@@ -1,0 +1,28 @@
+var React      = require('react');
+var LaunchPage = require('./launch.js');
+var HomePage   = require('./home.js');
+var ImagePage  = require('./images.js');
+var ErrorPage  = require('./error.js');
+var Layout     = require('./layout.js');
+
+var MainPage = React.createClass({
+  linkTo: function(id) {
+    this.setState({rountName: id});
+  },
+  render: function() {
+    var routeName = this.props.routeName;
+    if (routeName == '' || routeName == 'launch') {
+      return <LaunchPage>测试DEMO</LaunchPage>
+    }
+    else if (routeName == 'demo1') {
+      return <Layout><HomePage /></Layout>;
+    }
+    else if (routeName == 'demo2') {
+      return <Layout><ImagePage /></Layout>;
+    }
+    return <Layout><ErrorPage /></Layout>;
+  }
+});
+
+module.exports = MainPage;
+

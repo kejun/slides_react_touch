@@ -1,0 +1,10 @@
+return this.transferPropsTo(
+  <TouchableArea scroller={this.scroller} style={containerStyle}>
+  <AnimatableContainer
+    translate={{x:-this.state.left}}>
+  <div class="imageview-content" style={contentStyle} ref="content">
+  {this.props.children}
+  </div>
+  </AnimatableContainer>
+  </TouchableArea>
+);
