@@ -1,0 +1,29 @@
+/** @jsx React.DOM */
+var React     = require('react');
+var Router    = require('react-touch/lib/routing/Router');
+var Rating    = require('./Rating');
+var Image     = require('./Image');
+var Mark      = require('./Mark');
+var typeLabel = require('./Category');
+
+var SubjectCard = React.createClass({
+  handleTap: function() {
+    Router.trigger('/subject/' + this.props.id);
+  },
+  render: function() {
+     var cate = '';
+     if (this.props.type) {
+       cate = typeLabel[this.props.type] + ' ';
+     }
+    return this.transferPropsTo(
+      <div className={this.props.className || 'card-subject'} onTouchTap={this.handleTap}>
+        <Image src={this.props.pic} />
+        <div className="title">{cate + this.props.title}</div>
+        <Rating value={this.props.rating} />
+        {this.props.content}
+      </div>
+    );
+  }
+});
+
+module.exports = SubjectCard;

@@ -44,54 +44,25 @@
     <li>React is a JavaScript library for building user interfaces. Open source by Facebook
     <a href="http://facebook.github.io/react">facebook.github.io/react</a>
     <li> 3 highlight spots: <em>Just the UI</em> / <em>Virtual DOM</em> / <em>Data Flow</em>
-    <li>"We strongly believe that components are the right way to separate concerns rather than 'templates' and 'display logic.'" from React Blog 
-    <li>Components + MVC is Perfect, But Components is enough
+    <li>React + Flux vs. MVC
   </ul>
   </article>
 </div>
 
 <div class="page">
   <article>
-  <h2>Understanding React</h2>
-  <ul>
-    <li>A component-implementation library, Not MVC 
-    <li>Troubles with MVC
-    <svg width="100%" height="200" viewBox="0 0 640 190">
-    <def>
-    <g id="svg-figure-1">
-    <circle cx="151" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
-      <animate attributeName="r" to="50" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-    </circle>
-    <circle cx="301" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
-      <animate id="svg_figure1_anim1" attributeName="r" to="60" dur="1s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate id="svg_figure1_anim1" attributeName="r" to="80" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
-      <animate attributeName="fill" from="#fff600" to="#f00" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
-      <animate attributeName="fill-opacity" to=".6" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
-    </circle>
-    <circle cx="451" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
-      <animate attributeName="r" to="60" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-      <animate attributeName="fill-opacity" to=".5" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
-    </circle>
-    <text x="140" y="110">M</text>
-    <text x="292" y="110">V</text>
-    <text x="440" y="110">C</text>
-    </g>
-    </def>
-    <use id="svg_figure1" xlink:href="#svg-figure-1"></use>
-    </svg>
-  </ul>
+  <h2>Take A Glance</h2>
+  <pre data-src="code10.html" data-type="language-javascript"></pre>
   </article>
 </div>
+
+
 
 <div class="page">
   <article>
   <h2>React Thinking</h2>
   <ul>
+    <li>A component-implementation library, Just the UI, Not MVC 
     <li>Part–whole theory
     <li>DEMO: Feedback
 <pre>
@@ -107,6 +78,48 @@
   </article>
 </div>
 
+
+<div class="page">
+  <article>
+  <h2>React + Flux</h2>
+<ul>
+  <li>
+"From first-hand experience, I can say that React+Flux has scaled well to 8+ developers over 800+ JS files and ~60k lines of code in a large single page app here at Facebook. "
+<div style="margin-right:4em;text-align:right;">-- <a href="https://news.ycombinator.com/item?id=7719957">wingspan</a></div>
+ <li>Troubles with MVC
+ <svg width="100%" height="200" viewBox="0 0 640 190">
+ <def>
+ <g id="svg-figure-1">
+ <circle cx="151" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+   <animate attributeName="r" to="50" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+ </circle>
+ <circle cx="301" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+   <animate id="svg_figure1_anim1" attributeName="r" to="60" dur="1s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill-opacity" to=".3" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate id="svg_figure1_anim1" attributeName="r" to="80" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+   <animate attributeName="fill" from="#fff600" to="#f00" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+   <animate attributeName="fill-opacity" to=".6" dur="5s" fill="freeze" begin="svg_figure1_anim1.end"/>
+ </circle>
+ <circle cx="451" cy="101" r="30" stroke="#333" sktroke-width="1" fill="none">
+   <animate attributeName="r" to="60" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill" to="#fff600" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+   <animate attributeName="fill-opacity" to=".5" dur=".5s" fill="freeze" begin="svg_figure1.click"/>
+ </circle>
+ <text x="140" y="110">M</text>
+ <text x="292" y="110">V</text>
+ <text x="440" y="110">C</text>
+ </g>
+ </def>
+ <use id="svg_figure1" xlink:href="#svg-figure-1"></use>
+ </svg>
+  </ul>
+  </article>
+</div>
+
+
 <div class="page">
   <article>
   <h2>React Touch</h2>
@@ -115,11 +128,38 @@
   see <a href="https://github.com/petehunt/react-touch-lib">github</a>
   <li>A typical usecase base on React, DEMO: 
   <a href="javascript:;" onclick="(function(p,n){var img=document.createElement('img');img.src='static/pics/demo1.gif';img.style.verticalAlign='top';p.insertBefore(img, n);p.removeChild(n);})(this.parentNode,this)">preview</a>
-  <li>React x ReactTouch x <a href="http://gulpjs.com/">Gulp</a> x <a href="http://webpack.github.io/">Webpack</a> x <a href="http://zynga.github.io/scroller/">ZyngaScroller</a>
-  <li>EXTRA: <a href="http://phonegap.com/developer/" target="_blank">PhoneGap Developer</a>
+  <li><a href="http://facebook.github.io/react/index.html">React</a> (with <a href="http://facebook.github.io/react/docs/flux-overview.html">Flux</a>) x <a href="https://github.com/petehunt/react-touch-lib">ReactTouch</a> x <a href="http://gulpjs.com/">Gulp</a> x <a href="http://webpack.github.io/">Webpack</a>
+  <li>EXTRA:  Rapid prototyping devel with <a href="http://phonegap.com/developer/" target="_blank">PhoneGap Developer</a>
   </ul>
   </article>
 </div>
+
+
+<div class="page">
+  <article>
+  <h2>Demo</h2>
+<pre>
+js:
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Javascript                      42            518            569           3212
+-------------------------------------------------------------------------------
+SUM:                            42            518            569           3212
+-------------------------------------------------------------------------------
+css:
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+SASS                            22             69              0            869
+-------------------------------------------------------------------------------
+SUM:                            22             69              0            869
+-------------------------------------------------------------------------------
+</pre>
+  </article>
+</div>
+
+
 
 <div class="page">
   <article>
