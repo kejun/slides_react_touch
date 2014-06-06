@@ -1,0 +1,21 @@
+render: function() {
+  var searchForm = (
+        <div className="app-search">
+          <form onSubmit={this.handleSearch}>
+            <input type="search" placeholder="搜索书、电影、唱片、商品..." ref="query" />
+            <input type="submit" value="搜索" />
+          </form>
+        </div>
+       );
+  var content = (
+        <div className="app-loading">
+          <Loading />
+        </div>
+      );
+  return (
+    <div>
+      {searchForm}
+      {content}
+    </div>
+  );
+}

@@ -1,0 +1,44 @@
+render: function() {
+  var searchForm = (
+        <div className="app-search">
+          <form onSubmit={this.handleSearch}>
+            <input type="search" placeholder="搜索书、电影、唱片、商品..." ref="query" />
+            <input type="submit" value="搜索" />
+          </form>
+        </div>
+       );
+  var content = (
+        <div className="app-loading">
+          <Loading />
+        </div>
+      );
+  var res = this.state.data.search.result;
+  var searchResult = [];
+  if (res && res.length) {
+    for (var i = 0; i < res.length; i++) {
+      searchResult.push((
+          <SubjectCard
+             key={i}
+             id={res[i].id}
+             pic={res[i].pic}
+             title={res[i].title}
+          />
+        ));
+    }
+    if (searchResult.length == 0) {
+      content = <div className="search-result">没有搜到 *_*</div>;
+    } else {
+      content = (
+          <div className="search-result">
+            <ScrollView ref="scrollview">{searchResult}</ScrollView>
+          </div>
+        );
+    }
+  }
+  return (
+    <div>
+      {searchForm}
+      {content}
+    </div>
+  );
+}

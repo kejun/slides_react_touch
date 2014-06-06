@@ -39,19 +39,56 @@
 
 <div class="page">
   <article>
+  <h2>Thinking About</h2>
+<ul class="think-about">
+  <li class="slide-item">PC and Mobile:
+      <br>PC, Bigger Screen, IA, Typography, Web Site, Mutilple-Pages / Single-Page, Mouse, ADSL
+      <br>Mobi, Smaller Screen, Interactive, Apps, Single-Page, Touch, Bettery, WIFI/3G/4G, Offline
+  <li class="slide-item">Server and Client:
+      <br>MPA, V in MVC, Server-side generate pages
+      <br>SPA, BaaS, Javascript generate pages
+  <li class="slide-item">MPA and SPA:
+      <br>MPA, Scale, Maintainability, Synchronization, Statics, WPO
+      <br>SPA, GOOD Experience, Asynchronization, Complexity, Build, Achitecture
+  <li class="slide-item">HTML5 and Native:
+      <br>H5, Open, Cross-platform, Fast, Community, Compatible, Performance
+      <br>Native, Mature language & tools, Mutiple-Platform, Typography, Release / AB / Iteration
+  <li class="slide-item">MVC and Components:
+      <br>Discuss later
+  <li class="slide-item">Embrace 'Mobile Time'
+</ul>
+  </article>
+</div>
+
+<div class="page page-center">
+  <article>
+  <p>Understanding features of developing mobile, 
+     <br>and select tools or create tools.
+  </article>
+</div>
+
+
+<div class="page">
+  <article>
   <h2>About React</h2>
   <ul>
     <li>React is a JavaScript library for building user interfaces. Open source by Facebook
     <a href="http://facebook.github.io/react">facebook.github.io/react</a>
-    <li> 3 highlight spots: <em>Just the UI</em> / <em>Virtual DOM</em> / <em>Data Flow</em>
-    <li>React + Flux vs. MVC
+    <li class="slide-item">Features:
+<ol style="font-size:.6em;">
+         <li>View/ViewController: Components with state (less listener), Virtual DOM (diff rerender, server-side render)
+        <li>Model: Data Flow (one-way, Flux)
+        <li>JSX Syntex (visual, recommend. <a href="http://facebook.github.io/react/jsx-compiler.html">line by line conversion</a>)
+        <li><a href="https://github.com/facebook/react/wiki/Complementary-Tools">Number of tools</a>
+        <li>Good compatibility (even ie6/7)
+      </ol>
   </ul>
   </article>
 </div>
 
 <div class="page">
   <article>
-  <h2>Take A Glance</h2>
+  <h2>At A Glance</h2>
   <pre data-src="code10.html" data-type="language-javascript"></pre>
   </article>
 </div>
@@ -61,20 +98,14 @@
 <div class="page">
   <article>
   <h2>React Thinking</h2>
-  <ul>
-    <li>A component-implementation library, Just the UI, Not MVC 
-    <li>Part–whole theory
-    <li>DEMO: Feedback
-<pre>
-|-- app.js
-|-- com.mark.js
-|-- com.mask.js
-|-- com.step1.js
-|-- com.step2.js
-|-- com.step3.js
-`-- post.js
-</pre>
-  </ul>
+  <ol>
+    <li class="slide-item">Break the UI into a component hierarchy 
+  <pre data-src="code11.html" data-type="language-javascript"></pre>
+    <li class="slide-item">Add state:
+  <pre data-src="code12.html" data-type="language-javascript"></pre>
+    <li class="slide-item">Request data and setState. Use flux pattern for large app.
+    <li class="slide-item">DEMO: Feedback
+  </ol>
   </article>
 </div>
 
@@ -83,10 +114,7 @@
   <article>
   <h2>React + Flux</h2>
 <ul>
-  <li>
-"From first-hand experience, I can say that React+Flux has scaled well to 8+ developers over 800+ JS files and ~60k lines of code in a large single page app here at Facebook. "
-<div style="margin-right:4em;text-align:right;">-- <a href="https://news.ycombinator.com/item?id=7719957">wingspan</a></div>
- <li>Troubles with MVC
+ <li class="slide-item">Troubles with MVC
  <svg width="100%" height="200" viewBox="0 0 640 190">
  <def>
  <g id="svg-figure-1">
@@ -115,6 +143,16 @@
  </def>
  <use id="svg_figure1" xlink:href="#svg-figure-1"></use>
  </svg>
+  <li class="slide-item">Data flow in Flux, be a single direction circle:
+<pre>
+Views ---> (actions) ----> Dispatcher ---> (registered callback) ---> Stores -------+
+Ʌ                                                                                   |
+|                                                                                   V
++-- (Controller-Views "change" event handlers) ---- (Stores emit "change" events) --+
+</pre>
+  <li class="slide-item">
+"From first-hand experience, I can say that React+Flux has scaled well to 8+ developers over 800+ JS files and ~60k lines of code in a large single page app here at Facebook. "
+<div style="margin-right:4em;text-align:right;">-- <a href="https://news.ycombinator.com/item?id=7719957">wingspan</a></div>
   </ul>
   </article>
 </div>
